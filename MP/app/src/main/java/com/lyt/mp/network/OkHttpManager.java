@@ -1,7 +1,9 @@
-package com.lyt.mp;
+package com.lyt.mp.network;
 
 import android.os.Looper;
 import android.util.Log;
+
+import com.google.gson.Gson;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,10 +55,10 @@ public class OkHttpManager {
 
     private String TAG = "OkHttpManager";
 
-    interface ResponseCallBack<T> {
+    public interface ResponseCallBack<T> {
         public void onFailure(String e);
 
-        public void onSuccess(T response);
+        public void onSuccess(Map response);
     }
 
     private OkHttpManager() {
@@ -299,11 +301,13 @@ public class OkHttpManager {
 
                 if (response.isSuccessful()) {
                     final String json = response.body().string();
+                    Gson gson = new Gson();
+                    Map<String,Object> map = gson.fromJson(json,Map.class);
                     Log.i(TAG, json);
                     mHandler.post(new Runnable() {
                         @Override
                         public void run() {
-                            callBack.onSuccess(json);
+                            callBack.onSuccess(map);
 //                            callBack.onAfter();
                         }
                     });

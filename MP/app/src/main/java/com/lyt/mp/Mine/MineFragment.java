@@ -1,4 +1,4 @@
-package com.lyt.mp;
+package com.lyt.mp.Mine;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,12 +9,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class ProfitFragment extends Fragment {
+import com.lyt.mp.R;
 
+public class MineFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = getLayoutInflater().inflate(R.layout.fragment_profit,container,false);
+        View view = getLayoutInflater().inflate(R.layout.mine_fragment_layout,container,false);
         return view;
     }
 }

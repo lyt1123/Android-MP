@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:background="#f3f3f3">
+
+    <View
+        android:id="@+id/profit_listitem_bg"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="14dp"
+        android:background="@drawable/profit_listitem_shape"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="20dp"
+        android:background="#fff"
+        android:textSize="16dp"
+        app:layout_constraintLeft_toLeftOf="@+id/profit_listitem_bg"
+        app:layout_constraintTop_toTopOf="@+id/profit_listitem_bg" />
+
+    <TextView
+        android:id="@+id/money_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="16dp"
+        android:textColor="#333333"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@+id/profit_listitem_bg"
+        app:layout_constraintTop_toBottomOf="@+id/title_tv" />
+
+    <ImageView
+        android:id="@+id/listitem_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginRight="28dp"
+        app:layout_constraintBottom_toBottomOf="@+id/profit_listitem_bg"
+        app:layout_constraintRight_toRightOf="@+id/profit_listitem_bg"
+        app:layout_constraintTop_toTopOf="@+id/profit_listitem_bg" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

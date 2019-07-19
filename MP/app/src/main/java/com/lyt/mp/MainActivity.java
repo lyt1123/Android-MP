@@ -6,6 +6,9 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.lyt.mp.Home.HomeFragment;
+import com.lyt.mp.Mine.MineFragment;
+import com.lyt.mp.Profit.ProfitFragment;
 
 public class MainActivity extends AppCompatActivity {
 
