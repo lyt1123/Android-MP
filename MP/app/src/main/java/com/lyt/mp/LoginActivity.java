@@ -42,9 +42,8 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(Map response) {
                     Log.d(TAG,response.toString());
-                    if (response.get("code").toString().equals("200")){
-                        UserDataManager.getInstance().SetUserData(response);
-
+                    if (Double.valueOf(response.get("code").toString()) == 200){
+                        UserDataManager.getInstance().SetUserData((Map) response.get("object"));
                         Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                         startActivity(intent);
                         finish();

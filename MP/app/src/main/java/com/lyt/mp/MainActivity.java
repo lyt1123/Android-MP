@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.lyt.mp.Home.HomeFragment;
 import com.lyt.mp.Mine.MineFragment;
@@ -53,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         hideFragment(ft);
         switch (index) {
             case FRAGMENT_HOME:
-                /**
+                /*
                  * 如果Fragment为空，就新建一个实例
                  * 如果不为空，就将它从栈中显示出来
                  */

@@ -49,20 +49,20 @@ public class OkHttpManager {
     // 必须要用的okhttpclient实例,在构造器中实例化保证单一实例
     private OkHttpClient mOkHttpClient;
 
-    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+    private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
     private android.os.Handler mHandler;
 
     private String TAG = "OkHttpManager";
 
-    public interface ResponseCallBack<T> {
+    public interface ResponseCallBack {
         public void onFailure(String e);
 
         public void onSuccess(Map response);
     }
 
     private OkHttpManager() {
-        /**
+        /*
          * okHttp3中超时方法移植到Builder中
          */
 
@@ -119,16 +119,14 @@ public class OkHttpManager {
     /**
      * 对外提供的Get方法访问
      *
-     * @param url
-     * @param callBack
      */
     public void get(String url, ResponseCallBack callBack) {
-        /**
+        /*
          * 通过url和GET方式构建Request
          */
         Log.i(TAG, "get: ");
         Request request = bulidRequestForGet(url);
-        /**
+        /*
          * 请求网络的逻辑
          */
         requestNetWork(request, callBack);
@@ -137,8 +135,6 @@ public class OkHttpManager {
     /**
      * GET方式构建Request
      *
-     * @param url
-     * @return
      */
     private Request bulidRequestForGet(String url) {
 
@@ -151,17 +147,15 @@ public class OkHttpManager {
     /**
      * 对外提供的Post方法访问
      *
-     * @param url
      * @param parms:   提交内容为表单数据
-     * @param callBack
      */
     public void post(String url, Map parms, ResponseCallBack callBack) {
-        /**
+        /*
          * 通过url和POST方式构建Request
          */
         Log.i(TAG, url);
         Request request = bulidRequestForPostByForm(host + url, parms, false);
-        /**
+        /*
          * 请求网络的逻辑
          */
         requestNetWork(request, callBack);
@@ -170,12 +164,12 @@ public class OkHttpManager {
 
 
     public void postMultiPart(String url, Map<String, String> parms, ResponseCallBack callBack) {
-        /**
+        /*
          * 通过url和POST方式构建Request
          */
         Log.i(TAG, url);
         Request request = bulidRequestForPostByForm(host + url, parms, true);
-        /**
+        /*
          * 请求网络的逻辑
          */
         requestNetWork(request, callBack);
@@ -184,9 +178,6 @@ public class OkHttpManager {
     /**
      * POST方式构建Request {Form}
      *
-     * @param url
-     * @param parms
-     * @return
      */
     private Request bulidRequestForPostByForm(String url, Map<String, String> parms, boolean isMultiPart) {
 
@@ -243,18 +234,16 @@ public class OkHttpManager {
     /**
      * 对外提供的Post方法访问
      *
-     * @param url
      * @param json:    提交内容为json数据
-     * @param callBack
      */
     public void post(String url, String json, ResponseCallBack callBack) {
-        /**
+        /*
          * 通过url和POST方式构建Request
          */
         Request request = bulidRequestForPostByJson(host + url, json);
 
 
-        /**
+        /*
          * 请求网络的逻辑
          */
         requestNetWork(request, callBack);
@@ -264,9 +253,6 @@ public class OkHttpManager {
     /**
      * POST方式构建Request {json}
      *
-     * @param url
-     * @param json
-     * @return
      */
     private Request bulidRequestForPostByJson(String url, String json) {
         RequestBody body = RequestBody.create(JSON, json);
@@ -279,7 +265,7 @@ public class OkHttpManager {
 
     private void requestNetWork(final Request request, final ResponseCallBack callBack) {
 
-        /**
+        /*
          * 此处可以处理联网环境
          */
 //        callBack.onBefore(request);

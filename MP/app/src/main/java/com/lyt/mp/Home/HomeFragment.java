@@ -73,7 +73,7 @@ public class HomeFragment extends Fragment implements OnBannerListener {
         Log.i("OnBannerClick", String.valueOf(position));
     }
 
-    public void initFuncView(View view){
+    private void initFuncView(View view){
 
         int[] icon = {R.drawable.home_netin,R.drawable.home_refer,R.drawable.home_store,R.drawable.home_terminal,R.drawable.home_trade,R.drawable.home_next,R.drawable.home_top,R.drawable.home_share};
         String[] name = {"商户入网","商户查询","终端采购","终端管理","交易统计","下级管理","TOP10","商户分享"};

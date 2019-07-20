@@ -1,5 +1,7 @@
 package com.lyt.mp.network;
 
+import com.lyt.mp.UserDataManager;
+
 import java.io.IOException;
 
 import okhttp3.Interceptor;
@@ -17,6 +19,7 @@ public class HeaderInterceptor implements Interceptor {
                 .newBuilder()
                 .addHeader("appCode","AGENT_ANDROID")
                 .addHeader("deviceType","Android")
+                .addHeader("token", UserDataManager.getInstance().getToken())
                 .build();
         return chain.proceed(request);
     }

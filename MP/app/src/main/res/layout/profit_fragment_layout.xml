@@ -49,7 +49,7 @@
     <TextView
         android:id="@+id/profit_city_tv"
         app:layout_constraintRight_toLeftOf="@+id/profit_statistic_tv"
-        android:layout_marginRight="35dp"
+        android:layout_marginRight="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="30dp"
         android:text="总部直联零门槛"
@@ -71,7 +71,7 @@
     <TextView
         android:id="@+id/profit_safe_tv"
         app:layout_constraintLeft_toRightOf="@+id/profit_statistic_tv"
-        android:layout_marginLeft="35dp"
+        android:layout_marginLeft="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="30dp"
         android:text="总部直联零门槛"
