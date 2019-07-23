@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomEditTextView">
+        <attr name="customleftimg" format="reference" />
+        <attr name="customtext" format="string"></attr>
+        <attr name="customcontent" format="string" />
+    </declare-styleable>
+</resources>

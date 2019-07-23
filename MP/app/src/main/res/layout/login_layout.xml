@@ -10,7 +10,7 @@
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginTop="50dp"
-        android:src="@mipmap/login_logo"
+        android:src="@drawable/login_logo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +23,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/edittext_phone_shape"
-        android:drawableLeft="@mipmap/login_phone"
+        android:drawableLeft="@drawable/login_phone"
         android:drawablePadding="20dp"
         android:elevation="5dp"
         android:hint="手机号"
@@ -40,7 +40,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/edittext_phone_shape"
-        android:drawableLeft="@mipmap/login_psd"
+        android:drawableLeft="@drawable/login_psd"
         android:drawablePadding="20dp"
         android:elevation="5dp"
         android:hint="密码"
@@ -81,7 +81,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginBottom="50dp"
-        android:background="@mipmap/icon_weibo"
+        android:background="@drawable/icon_weibo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
@@ -91,7 +91,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginRight="50dp"
-        android:background="@mipmap/icon_wechat"
+        android:background="@drawable/icon_wechat"
         app:layout_constraintBottom_toBottomOf="@id/btn_weibo"
         app:layout_constraintRight_toLeftOf="@id/btn_weibo" />
 
@@ -100,7 +100,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginLeft="50dp"
-        android:background="@mipmap/icon_qq"
+        android:background="@drawable/icon_qq"
         app:layout_constraintBottom_toBottomOf="@id/btn_weibo"
         app:layout_constraintLeft_toRightOf="@+id/btn_weibo" />
 
