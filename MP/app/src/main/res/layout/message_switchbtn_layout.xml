@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="180dp"
+    android:layout_height="29dp"
+    android:background="#fff"
+    android:id="@+id/message_switch_layout"
+    android:gravity="center_horizontal">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/message_swithchCardView"
-        android:layout_width="176dp"
-        android:layout_height="29dp">
+    <Button
+        android:id="@+id/message_systermBtn"
+        android:layout_width="88dp"
+        android:layout_height="29dp"
+        android:text="系统公告"
+        android:textSize="16sp"
+        android:background="@drawable/message_sysbtn_select_shape"
+        android:textColor="@color/colorwhite"/>
 
-        <Button
-            android:id="@+id/message_systermBtn"
-            android:layout_width="88dp"
-            android:layout_height="29dp"
-            android:text="系统公告"
-            android:textColor="#000000"
-            android:textSize="16sp" />
-
-        <Button
-            android:id="@+id/message_userBtn"
-            android:layout_width="88dp"
-            android:layout_height="29dp"
-            android:layout_gravity="end"
-            android:text="个人公告"
-            android:textSize="16sp" />
-
-    </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/message_userBtn"
+        android:layout_width="88dp"
+        android:layout_height="29dp"
+        android:layout_gravity="end"
+        android:text="个人公告"
+        android:textSize="16sp"
+        android:background="@drawable/message_perbtn_dissel_shape"
+        android:textColor="@color/normalBlueColor"/>
 
 </LinearLayout>

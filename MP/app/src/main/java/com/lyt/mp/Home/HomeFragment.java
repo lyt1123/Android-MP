@@ -1,5 +1,6 @@
 package com.lyt.mp.Home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,7 +14,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.lyt.mp.MyApplication;
 import com.lyt.mp.R;
@@ -36,25 +36,13 @@ public class HomeFragment extends Fragment implements OnBannerListener {
         initBannerView(view);
         initFuncView(view);
 
-        Button messageBtn =  getActivity().findViewById(R.id.btn_message);
+        Button messageBtn =  view.findViewById(R.id.btn_message);
         messageBtn.setOnClickListener(v -> {
-            Toast.makeText(MyApplication.getInstance(),"asdfasdfasdf",Toast.LENGTH_SHORT).show();
-//            FragmentTransaction ft = getFragmentManager().beginTransaction();
-//            MessageListFragment messageListFragment = new MessageListFragment();
-//            ft.add(messageListFragment,MessageListFragment.class.getName());
+           startActivity(new Intent(getActivity(), MessageListAcitvity.class));
         });
 
         return view;
     }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-
-    }
-
-
 
     private void initBannerView(View view) {
         banner = view.findViewById(R.id.banner);
@@ -95,7 +83,14 @@ public class HomeFragment extends Fragment implements OnBannerListener {
 
     private void initFuncView(View view){
 
-        int[] icon = {R.drawable.home_netin,R.drawable.home_refer,R.drawable.home_store,R.drawable.home_terminal,R.drawable.home_trade,R.drawable.home_next,R.drawable.home_top,R.drawable.home_share};
+        int[] icon = {R.drawable.home_netin,
+                R.drawable.home_refer,
+                R.drawable.home_store,
+                R.drawable.home_terminal,
+                R.drawable.home_trade,
+                R.drawable.home_next,
+                R.drawable.home_top,
+                R.drawable.home_share};
         String[] name = {"商户入网","商户查询","终端采购","终端管理","交易统计","下级管理","TOP10","商户分享"};
 
         List<Map<String,Object>> listItems = new ArrayList<>();

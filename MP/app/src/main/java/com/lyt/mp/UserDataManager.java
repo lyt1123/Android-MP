@@ -29,9 +29,9 @@ public class UserDataManager {
 
     @SuppressWarnings("null")
     void SetUserData(Map map) {
-        username = map.get("username").toString();
-        token = map.get("token").toString();
-        agentNo = map.get("agentNo").toString();
+        setUsername(map.get("username").toString());
+        setToken(map.get("token").toString());
+        setAgentNo(map.get("agentNo").toString());
     }
 
     public String getAgentNo() {
