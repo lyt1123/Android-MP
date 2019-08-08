@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">msd</string>
+    <string name="title_activity_terminal_manager">TerminalManagerActivity</string>
 </resources>

@@ -2,14 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lyt.mp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <!-- if you want to load images from a file OR from the internet -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- if you want to load images from a file OR from the internet -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-
-<!--    <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>-->
-<!--    <item name="android:statusBarColor" tools:targetApi="lollipop">@android:color/transparent-->
-<!--    </item>-->
 
     <application
         android:name=".MyApplication"
@@ -20,10 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".LoginActivity">
-        </activity>
-
+        <activity
+            android:name=".Home.TerminalManagerActivity"
+            android:label="@string/title_activity_terminal_manager"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".LoginActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,8 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Home.MessageListAcitvity"></activity>
+        <activity android:name=".Home.MessageListAcitvity" />
     </application>
 
 </manifest>

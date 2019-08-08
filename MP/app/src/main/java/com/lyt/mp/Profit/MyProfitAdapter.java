@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.lyt.mp.R;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 public class MyProfitAdapter extends BaseAdapter {

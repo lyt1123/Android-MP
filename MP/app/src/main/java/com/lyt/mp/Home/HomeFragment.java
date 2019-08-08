@@ -113,6 +113,10 @@ public class HomeFragment extends Fragment implements OnBannerListener {
 
         gridView.setOnItemClickListener((parent, view1, position, id) -> {
             Toast.makeText(MyApplication.getInstance(),name[position],Toast.LENGTH_SHORT).show();
+            if (position == 3){
+                Intent intent = new Intent(getActivity(),TerminalManagerActivity.class);
+                startActivity(intent);
+            }
         });
     }
 }

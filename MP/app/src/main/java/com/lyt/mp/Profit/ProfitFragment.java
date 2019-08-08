@@ -13,11 +13,9 @@ import androidx.fragment.app.Fragment;
 
 import com.lyt.mp.MyApplication;
 import com.lyt.mp.R;
-import com.lyt.mp.UserDataManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ProfitFragment extends Fragment {
