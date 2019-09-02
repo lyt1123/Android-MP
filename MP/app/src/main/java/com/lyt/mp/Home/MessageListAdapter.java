@@ -52,7 +52,7 @@ public class MessageListAdapter extends BaseAdapter {
         }
 
         Map<String,String> map = listItems.get(position);
-        viewHolder.timeTV.setText(map.get("time"));
+        viewHolder.timeTV.setText(map.get("createTime"));
         viewHolder.titleTV.setText(map.get("title"));
         viewHolder.contentTV.setText(map.get("content"));
         return convertView;

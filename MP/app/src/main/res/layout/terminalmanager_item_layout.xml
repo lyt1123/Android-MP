@@ -2,41 +2,60 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorf3" >
+    android:background="@color/colorf3">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/colorwhite"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="14dp"
-        android:layout_marginRight="14dp" >
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="14dp"
+        android:background="@color/colorwhite"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/terminalNumTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="62dp"
-            android:text="终端SN：91288381238"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="14dp"/>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:gravity="center_vertical">
+
+           <TextView
+               android:id="@+id/terminalNumTV"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="14dp"
+               android:layout_marginRight="12dp"
+               android:text="终端SN：91288381238"
+               android:layout_weight="1"/>
+
+           <Button
+               android:id="@+id/terminalChangeBtn"
+               android:layout_width="48dp"
+               android:layout_height="20dp"
+               android:layout_marginRight="14dp"
+               android:text="绑定"
+               android:textSize="12dp"
+               android:textColor="@color/normalBlueColor"
+               android:background="@drawable/terminal_bindbtn_shape"/>
+
+       </LinearLayout>
 
         <TextView
             android:id="@+id/terminalTypeTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="终端型号：联迪E5510"
             android:layout_marginLeft="14dp"
-            android:layout_marginTop="12dp" />
+            android:layout_marginTop="12dp"
+            android:text="终端型号：联迪E5510" />
+
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/colorf3"
-            android:layout_marginTop="16dp"
             android:layout_marginLeft="14dp"
-            android:layout_marginRight="14dp"/>
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="14dp"
+            android:background="@color/colorf3" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,15 +67,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
                 android:text="绑定状态："
-                android:textSize="14dp"
                 android:textColor="@color/color333"
-                android:layout_marginLeft="14dp" />
+                android:textSize="14dp" />
 
             <TextView
                 android:id="@+id/terminalStateTV"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="已绑定"/>
 
         </LinearLayout>
 

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -35,21 +34,20 @@ public class LoginActivity extends AppCompatActivity {
             map.put("password",psdET.getText().toString());
             OkHttpManager.getInstance().post("/agent-gateway/login", map, new OkHttpManager.ResponseCallBack() {
                 @Override
-                public void onFailure(String e) {
-                    Toast.makeText(LoginActivity.this,e,Toast.LENGTH_SHORT).show();
-                }
-
-                @Override
                 public void onSuccess(Map response) {
-                    Log.d(TAG,response.toString());
                     if (Double.valueOf(response.get("code").toString()) == 200){
-                        UserDataManager.getInstance().SetUserData((Map) response.get("object"));
+                        UserDataManager.getInstance().setUserData((Map)response.get("object"));
                         Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                         startActivity(intent);
                         finish();
                     }else {
-                        Toast.makeText(LoginActivity.this,response.get("failMessage").toString(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this,map.get("message").toString(),Toast.LENGTH_SHORT).show();
                     }
+                }
+
+                @Override
+                public void onFailure(String e) {
+                    Toast.makeText(LoginActivity.this,e,Toast.LENGTH_SHORT).show();
                 }
             });
         });

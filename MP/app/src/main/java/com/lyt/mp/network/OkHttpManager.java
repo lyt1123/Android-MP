@@ -7,11 +7,13 @@ import com.google.gson.Gson;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.security.KeyManagementException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.net.ssl.SSLContext;
@@ -35,12 +37,6 @@ public class OkHttpManager {
     // debug
     private String host = "http://10.8.9.183:8000";
 
-
-    //product
-//    private String host = "";
-
-
-
     /**
      * 网络访问要求singleton
      */
@@ -56,9 +52,9 @@ public class OkHttpManager {
     private String TAG = "OkHttpManager";
 
     public interface ResponseCallBack {
-        public void onFailure(String e);
-
         public void onSuccess(Map response);
+
+        public void onFailure(String e);
     }
 
     private OkHttpManager() {
@@ -112,10 +108,6 @@ public class OkHttpManager {
         return instance;
     }
 
-    public void initBuilder() {
-
-    }
-
     /**
      * 对外提供的Get方法访问
      *
@@ -143,6 +135,27 @@ public class OkHttpManager {
                 .get()
                 .build();
     }
+
+
+
+    // get请求
+    public void get(String actionUrl, Map<String, String> paramsMap, ResponseCallBack callBack) {
+        StringBuilder tempParams = new StringBuilder();
+
+        int pos = 0;
+        for (String key : paramsMap.keySet()) {
+            if (pos > 0) {
+                tempParams.append("&");
+            }
+            tempParams.append(String.format("%s=%s", key, URLEncoder.encode(paramsMap.get(key))));
+            pos++;
+        }
+        String requestUrl = String.format("%s/%s?%s", host, actionUrl, tempParams.toString());
+
+        Request request = new  Request.Builder().url(requestUrl).get().build();
+        requestNetWork(request,callBack);
+    }
+
 
     /**
      * 对外提供的Post方法访问
@@ -173,6 +186,7 @@ public class OkHttpManager {
          * 请求网络的逻辑
          */
         requestNetWork(request, callBack);
+
     }
 
     /**
@@ -284,17 +298,15 @@ public class OkHttpManager {
 
             @Override
             public void onResponse(final Call call, final Response response) throws IOException {
-
                 if (response.isSuccessful()) {
                     final String json = response.body().string();
                     Gson gson = new Gson();
-                    Map<String,Object> map = gson.fromJson(json,Map.class);
+                    Map map = gson.fromJson(json,Map.class);
                     Log.i(TAG, json);
                     mHandler.post(new Runnable() {
                         @Override
                         public void run() {
                             callBack.onSuccess(map);
-//                            callBack.onAfter();
                         }
                     });
                 } else {

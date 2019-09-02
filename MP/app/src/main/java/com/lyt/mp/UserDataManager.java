@@ -21,14 +21,14 @@ public class UserDataManager {
         return Holder.INSTANCE;
     }
 
-    public String username;
-    public String token;
-    public String agentNo;
+    private String username;
+    private String token;
+    private String agentNo;
 
     private SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(MyApplication.getInstance());
 
     @SuppressWarnings("null")
-    void SetUserData(Map map) {
+    void setUserData(Map map) {
         setUsername(map.get("username").toString());
         setToken(map.get("token").toString());
         setAgentNo(map.get("agentNo").toString());
